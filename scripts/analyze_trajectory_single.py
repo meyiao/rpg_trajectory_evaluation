@@ -2,7 +2,6 @@
 
 import os
 import argparse
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
@@ -17,7 +16,7 @@ from multiple_traj_errors import MulTrajError
 
 init(autoreset=True)
 rc('font', **{'family': 'serif', 'serif': ['Cardo']})
-rc('text', usetex=True)
+rc('text', usetex=False)
 
 FORMAT = '.pdf'
 
@@ -145,7 +144,7 @@ if __name__ == '__main__':
               "We will plot trials {0}.".format(args.mul_plot_idx))
     else:
         args.mul_plot_idx = [0]
-    assert len(args.mul_plot_idx) is 1, "Multiple plots not supported yet"
+    assert len(args.mul_plot_idx) == 1, "Multiple plots not supported yet"
 
     for est_type_i, plot_dir_i in zip(args.est_types, plots_dirs):
         print(Fore.RED +
